@@ -1,0 +1,3 @@
+@echo off
+echo Iniciando servidor de Karaoke...
+python server.py

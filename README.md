@@ -21,10 +21,28 @@ Edita el archivo [config.json](config.json) y añade tu YouTube API Key:
 
 ### 2. Iniciar el servidor local
 
-Abre una terminal en esta carpeta y ejecuta:
+#### Windows
+
+Opción 1 - Doble clic en `start.bat` desde el explorador de archivos
+
+Opción 2 - Desde PowerShell:
+```powershell
+.\start.bat
+```
+o
+```powershell
+.\start.ps1
+```
+
+#### Linux/Mac
 
 ```bash
-python server.py
+python3 server.py
+```
+
+o usa el Makefile:
+```bash
+make start
 ```
 
 Verás un mensaje como:
