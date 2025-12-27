@@ -11,6 +11,13 @@ export async function searchAndPlay() {
         return;
     }
 
+    // Salir del modo evolución si está activo
+    if (state.evolutionMode) {
+        state.evolutionMode = false;
+        document.getElementById('evolutionNextBtn').classList.remove('visible');
+        window.karaokeApp.updateSongsList();
+    }
+
     document.getElementById('nowPlaying').textContent = 'Buscando...';
     const karaokeMode = document.getElementById('karaokeMode').checked;
     const searchMode = karaokeMode ? 'Karaoke' : 'Letra';
@@ -32,6 +39,13 @@ export async function startRoulette() {
     if (state.participantes.length < 2 || state.canciones.length === 0) {
         alert('Se necesitan al menos 2 participantes y canciones disponibles');
         return;
+    }
+
+    // Salir del modo evolución si está activo
+    if (state.evolutionMode) {
+        state.evolutionMode = false;
+        document.getElementById('evolutionNextBtn').classList.remove('visible');
+        window.karaokeApp.updateSongsList();
     }
 
     const overlay = document.getElementById('rouletteOverlay');
@@ -107,6 +121,9 @@ export async function startEvolution() {
     const sortedSongs = [...state.canciones].sort((a, b) => a.año - b.año);
     window.karaokeApp.updateSongsList();
     
+    // Mostrar botón de siguiente
+    document.getElementById('evolutionNextBtn').classList.add('visible');
+    
     const firstSong = sortedSongs[0];
     
     // Mostrar overlay de transición para la primera canción
@@ -139,6 +156,39 @@ export async function playEvolutionSong(song) {
         loadVideoWithTimeout(videoIds[0], window.karaokeApp.tryNextVideo);
         document.getElementById('nowPlaying').textContent =
             `${song.titulo} - ${song.artista} (${song.año})`.toUpperCase();
+        window.karaokeApp.updateSongsList();
+    }
+}
+
+// Saltar a la siguiente canción en modo evolución
+export function skipToNextEvolution() {
+    if (!state.evolutionMode) return;
+    
+    state.currentEvolutionIndex++;
+    const sortedSongs = [...state.canciones].sort((a, b) => a.año - b.año);
+    
+    if (state.currentEvolutionIndex < sortedSongs.length) {
+        const nextSong = sortedSongs[state.currentEvolutionIndex];
+        
+        // Mostrar overlay de transición
+        const overlay = document.getElementById('evolutionTransition');
+        const yearEl = document.getElementById('evolutionYear');
+        const songEl = document.getElementById('evolutionSong');
+        const artistEl = document.getElementById('evolutionArtist');
+        
+        yearEl.textContent = nextSong.año;
+        songEl.textContent = nextSong.titulo;
+        artistEl.textContent = nextSong.artista;
+        overlay.classList.add('active');
+        
+        setTimeout(() => {
+            overlay.classList.remove('active');
+            playEvolutionSong(nextSong);
+        }, 3000);
+    } else {
+        state.evolutionMode = false;
+        document.getElementById('evolutionNextBtn').classList.remove('visible');
+        document.getElementById('nowPlaying').textContent = '¡Evolución Completada!';
         window.karaokeApp.updateSongsList();
     }
 }

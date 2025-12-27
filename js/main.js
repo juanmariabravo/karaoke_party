@@ -2,7 +2,7 @@ import { loadConfiguration, saveToFile, state } from './config.js';
 import { addParticipant, deleteParticipant } from './participants.js';
 import { initYouTubePlayer, onYouTubeIframeAPIReady, onPlayerError, tryNextVideo, loadVideoWithTimeout, onPlayerStateChange } from './player.js';
 import { renderLists, updateSongsList } from './ui.js';
-import { searchAndPlay, startRoulette, startEvolution, playEvolutionSong } from './game-modes.js';
+import { searchAndPlay, startRoulette, startEvolution, playEvolutionSong, skipToNextEvolution } from './game-modes.js';
 
 // Inicializar aplicación
 async function init() {
@@ -28,6 +28,7 @@ window.karaokeApp = {
     searchAndPlay,
     startRoulette,
     startEvolution,
+    skipToNextEvolution,
     tryNextVideo: () => tryNextVideo(loadVideoWithTimeout),
     updateSongsList
 };

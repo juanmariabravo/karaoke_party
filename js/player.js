@@ -96,6 +96,7 @@ export function onPlayerStateChange(event, playEvolutionSong) {
             }, 3000);
         } else {
             state.evolutionMode = false;
+            document.getElementById('evolutionNextBtn').classList.remove('visible');
             document.getElementById('nowPlaying').textContent = '¡Evolución Completada!';
         }
     }
