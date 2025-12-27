@@ -1,0 +1,242 @@
+[
+    {
+        "titulo": "Mi Gran Noche",
+        "artista": "Raphael",
+        "año": 1967
+    },
+    {
+        "titulo": "Un beso y una flor",
+        "artista": "Nino Bravo",
+        "año": 1972
+    },
+    {
+        "titulo": "Bohemian Rhapsody",
+        "artista": "Queen",
+        "año": 1975
+    },
+    {
+        "titulo": "Mamma Mia",
+        "artista": "ABBA",
+        "año": 1975
+    },
+    {
+        "titulo": "Dancing Queen",
+        "artista": "ABBA",
+        "año": 1976
+    },
+    {
+        "titulo": "Livin' on a Prayer",
+        "artista": "Bon Jovi",
+        "año": 1986
+    },
+    {
+        "titulo": "La Macarena",
+        "artista": "Los del Río",
+        "año": 1993
+    },
+    {
+        "titulo": "Hakuna Matata",
+        "artista": "El Rey León",
+        "año": 1994
+    },
+    {
+        "titulo": "Yo voy a ser el Rey León",
+        "artista": "El Rey León",
+        "año": 1994
+    },
+    {
+        "titulo": "Sé lo que hicisteis",
+        "artista": "Melendi",
+        "año": 2003
+    },
+    {
+        "titulo": "Si te vas...",
+        "artista": "Extremoduro",
+        "año": 2011
+    },
+    {
+        "titulo": "Como Camarón",
+        "artista": "Estopa",
+        "año": 1999
+    },
+    {
+        "titulo": "La raja de tu falda",
+        "artista": "Estopa",
+        "año": 1999
+    },
+    {
+        "titulo": "Carolina",
+        "artista": "M-Clan",
+        "año": 2001
+    },
+    {
+        "titulo": "Aserejé",
+        "artista": "Las Ketchup",
+        "año": 2002
+    },
+    {
+        "titulo": "La vereda de la puerta de atrás",
+        "artista": "Extremoduro",
+        "año": 2002
+    },
+    {
+        "titulo": "Orgullo",
+        "artista": "El Barrio",
+        "año": 2010
+    },
+    {
+        "titulo": "Soldadito Marinero",
+        "artista": "Fito & Fitipaldis",
+        "año": 2003
+    },
+    {
+        "titulo": "Rosas",
+        "artista": "La Oreja de Van Gogh",
+        "año": 2003
+    },
+    {
+        "titulo": "Caminando por la vida",
+        "artista": "Melendi",
+        "año": 2005
+    },
+    {
+        "titulo": "Por la boca vive el pez",
+        "artista": "Fito & Fitipaldis",
+        "año": 2006
+    },
+    {
+        "titulo": "Colgando en tus manos",
+        "artista": "Carlos Baute y Marta Sánchez",
+        "año": 2008
+    },
+    {
+        "titulo": "Yo te esperaré",
+        "artista": "Cali y El Dandee",
+        "año": 2011
+    },
+    {
+        "titulo": "Bailando por ahí",
+        "artista": "Juan Magán",
+        "año": 2011
+    },
+    {
+        "titulo": "Te voy a esperar",
+        "artista": "Juan Magán y Belinda",
+        "año": 2012
+    },
+    {
+        "titulo": "Limbo",
+        "artista": "Daddy Yankee",
+        "año": 2012
+    },
+    {
+        "titulo": "Cheque al portamor",
+        "artista": "Melendi",
+        "año": 2012
+    },
+    {
+        "titulo": "La Promesa",
+        "artista": "Melendi",
+        "año": 2014
+    },
+    {
+        "titulo": "Súbeme la radio",
+        "artista": "Enrique Iglesias",
+        "año": 2017
+    },
+    {
+        "titulo": "El Farsante",
+        "artista": "Ozuna",
+        "año": 2017
+    },
+    {
+        "titulo": "Vas a quedarte",
+        "artista": "Aitana",
+        "año": 2018
+    },
+    {
+        "titulo": "El Fin del Mundo",
+        "artista": "La La Love You",
+        "año": 2019
+    },
+    {
+        "titulo": "Tacones Rojos",
+        "artista": "Sebastian Yatra",
+        "año": 2021
+    },
+    {
+        "titulo": "Despechá",
+        "artista": "Rosalía",
+        "año": 2022
+    },
+    {
+        "titulo": "Tití me preguntó",
+        "artista": "Bad Bunny",
+        "año": 2022
+    },
+    {
+        "titulo": "Vista al mar",
+        "artista": "Quevedo",
+        "año": 2022
+    },
+    {
+        "titulo": "Quiero decirte",
+        "artista": "Abraham Mateo y Ana Mena",
+        "año": 2022
+    },
+    {
+        "titulo": "Nochentera",
+        "artista": "Vicco",
+        "año": 2022
+    },
+    {
+        "titulo": "Potra Salvaje (Hard Remix)",
+        "artista": "Isabel Aaiún",
+        "año": 2023
+    },
+    {
+        "titulo": "La Morocha",
+        "artista": "Luck Ra, BM",
+        "año": 2023
+    },
+    {
+        "titulo": "Las Babys",
+        "artista": "Aitana",
+        "año": 2023
+    },
+    {
+        "titulo": "DADDY YANKEE || BZRP Music Sessions #0/66",
+        "artista": "Bizarrap & Daddy Yankee",
+        "año": 2025
+    },
+    {
+        "titulo": "Superestrella",
+        "artista": "Aitana",
+        "año": 2025
+    },
+    {
+        "titulo": "Still Luvin",
+        "artista": "Delaossa, Quevedo",
+        "año": 2025
+    },
+    {
+        "titulo": "Quevedo: Bzrp Music Sessions, Vol. 52/66",
+        "artista": "Bizarrap & Quevedo",
+        "año": 2022
+    },
+    {
+        "titulo": "Capaz (merenguetón)",
+        "artista": "Alleh y Yorghaki",
+        "año": 2024
+    },
+    {
+        "titulo": "La Perla",
+        "artista": "Rosalía",
+        "año": 2025
+    },
+    {
+        "titulo": "Si antes te hubiera conocido",
+        "artista": "Karol G",
+        "año": 2024
+    }
+]

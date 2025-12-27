@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Party 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="animated-bg">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">KARAOKE PARTY</div>
+        </header>
+
+        <div class="main-layout">
+            <div class="sidebar">
+                <h2><i class="fas fa-users"></i> Cantantes</h2>
+                <div class="add-participant-section">
+                    <input type="text" id="newParticipantInput" placeholder="Nuevo participante..."
+                        onkeypress="if(event.key==='Enter') window.karaokeApp.addParticipant()">
+                    <button class="small-btn btn-add" onclick="window.karaokeApp.addParticipant()"><i
+                            class="fas fa-plus"></i> Añadir</button>
+                </div>
+                <div id="participantsList"></div>
+            </div>
+
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <div id="player"></div>
+                </div>
+                <div class="now-playing" id="nowPlaying">Selecciona una canción</div>
+
+                <div class="search-floating">
+                    <div class="search-input-group">
+                        <input type="text" id="searchInput" placeholder="Buscar canción..."
+                            onkeypress="if(event.key==='Enter') window.karaokeApp.searchAndPlay()">
+                    </div>
+                    <button class="dance-btn btn-sing" onclick="window.karaokeApp.searchAndPlay()">
+                        <span><i class="fas fa-microphone icon"></i>CANTAR</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar modes-sidebar">
+                <h2><i class="fas fa-gamepad"></i> Modos de Juego</h2>
+                <button class="mode-btn btn-roulette" onclick="window.karaokeApp.startRoulette()">
+                    <span class="mode-icon"><i class="fas fa-dice"></i></span>
+                    <div class="mode-info">
+                        <div class="mode-title">RULETA</div>
+                        <div class="mode-desc">Sorteo aleatorio de cantante y canción</div>
+                    </div>
+                </button>
+                <button class="mode-btn btn-evolution" onclick="window.karaokeApp.startEvolution()">
+                    <span class="mode-icon"><i class="fas fa-clock"></i></span>
+                    <div class="mode-info">
+                        <div class="mode-title">EVOLUCIÓN</div>
+                        <div class="mode-desc">Canciones en orden cronológico</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="roulette-overlay" id="rouletteOverlay">
+        <div class="roulette-title"><i class="fas fa-dice"></i> RULETA MUSICAL <i class="fas fa-dice"></i></div>
+        <div class="slots-container">
+            <div class="slot-machine">
+                <div class="slot-label"><i class="fas fa-user"></i> Cantante 1</div>
+                <div class="slot-screen" id="singerSlot1">?</div>
+            </div>
+            <div class="slot-machine">
+                <div class="slot-label"><i class="fas fa-user-friends"></i> Cantante 2</div>
+                <div class="slot-screen" id="singerSlot2">?</div>
+            </div>
+            <div class="slot-machine">
+                <div class="slot-label"><i class="fas fa-music"></i> Canción</div>
+                <div class="slot-screen" id="songSlot">?</div>
+            </div>
+        </div>
+        <div class="winner-announcement" id="winnerText"></div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
