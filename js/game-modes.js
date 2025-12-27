@@ -106,7 +106,24 @@ export async function startEvolution() {
     state.currentEvolutionIndex = 0;
     const sortedSongs = [...state.canciones].sort((a, b) => a.año - b.año);
     window.karaokeApp.updateSongsList();
-    playEvolutionSong(sortedSongs[0]);
+    
+    const firstSong = sortedSongs[0];
+    
+    // Mostrar overlay de transición para la primera canción
+    const overlay = document.getElementById('evolutionTransition');
+    const yearEl = document.getElementById('evolutionYear');
+    const songEl = document.getElementById('evolutionSong');
+    const artistEl = document.getElementById('evolutionArtist');
+    
+    yearEl.textContent = firstSong.año;
+    songEl.textContent = firstSong.titulo;
+    artistEl.textContent = firstSong.artista;
+    overlay.classList.add('active');
+    
+    setTimeout(() => {
+        overlay.classList.remove('active');
+        playEvolutionSong(firstSong);
+    }, 3000);
 }
 
 // Reproducir canción del modo evolución

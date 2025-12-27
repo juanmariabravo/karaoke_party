@@ -77,9 +77,23 @@ export function onPlayerStateChange(event, playEvolutionSong) {
         state.currentEvolutionIndex++;
         const sortedSongs = [...state.canciones].sort((a, b) => a.año - b.año);
         if (state.currentEvolutionIndex < sortedSongs.length) {
+            const nextSong = sortedSongs[state.currentEvolutionIndex];
+            
+            // Mostrar overlay de transición
+            const overlay = document.getElementById('evolutionTransition');
+            const yearEl = document.getElementById('evolutionYear');
+            const songEl = document.getElementById('evolutionSong');
+            const artistEl = document.getElementById('evolutionArtist');
+            
+            yearEl.textContent = nextSong.año;
+            songEl.textContent = nextSong.titulo;
+            artistEl.textContent = nextSong.artista;
+            overlay.classList.add('active');
+            
             setTimeout(() => {
-                playEvolutionSong(sortedSongs[state.currentEvolutionIndex]);
-            }, 2000);
+                overlay.classList.remove('active');
+                playEvolutionSong(nextSong);
+            }, 3000);
         } else {
             state.evolutionMode = false;
             document.getElementById('nowPlaying').textContent = '¡Evolución Completada!';
