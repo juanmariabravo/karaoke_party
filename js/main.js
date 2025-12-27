@@ -13,6 +13,46 @@ async function init() {
 
     // Inicializar reproductor de YouTube
     initYouTubePlayer();
+
+    // Configurar modo inmersivo
+    setupImmersiveMode();
+}
+
+// Configurar modo inmersivo con paneles flotantes
+function setupImmersiveMode() {
+    // Ocultar splash screen después de 4 segundos
+    setTimeout(() => {
+        const splash = document.getElementById('splashScreen');
+        if (splash) {
+            splash.style.display = 'none';
+        }
+    }, 4000);
+
+    // Paneles flotantes
+    const leftPanel = document.getElementById('leftPanel');
+    const rightPanel = document.getElementById('rightPanel');
+    const leftTrigger = document.querySelector('.left-trigger');
+    const rightTrigger = document.querySelector('.right-trigger');
+
+    if (leftTrigger && leftPanel) {
+        leftTrigger.addEventListener('mouseenter', () => {
+            leftPanel.classList.add('visible');
+        });
+
+        leftPanel.addEventListener('mouseleave', () => {
+            leftPanel.classList.remove('visible');
+        });
+    }
+
+    if (rightTrigger && rightPanel) {
+        rightTrigger.addEventListener('mouseenter', () => {
+            rightPanel.classList.add('visible');
+        });
+
+        rightPanel.addEventListener('mouseleave', () => {
+            rightPanel.classList.remove('visible');
+        });
+    }
 }
 
 // Exponer funciones globales para uso desde HTML

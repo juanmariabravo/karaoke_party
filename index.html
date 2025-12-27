@@ -10,18 +10,53 @@
 </head>
 
 <body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <h1 class="splash-title">KARAOKE PARTY</h1>
+            <div class="splash-subtitle">Busca y canta tus canciones favoritas</div>
+            <div class="splash-author">
+                <span>by <a href="https://github.com/juanmariabravo" target="_blank" class="splash-author-link">juanmariabravo</a></span>
+                <a href="https://github.com/juanmariabravo" target="_blank" class="splash-github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div class="animated-bg">
         <div class="bg-circle"></div>
         <div class="bg-circle"></div>
         <div class="bg-circle"></div>
     </div>
 
-    <div class="container">
-        <header>
-            <div class="logo">KARAOKE</div>
-        </header>
+    <div class="immersive-container">
+        <!-- Mensaje de ayuda inicial -->
+        <div class="help-hint" id="helpHint">
+            <div class="help-hint-content">
+                <div class="help-hint-text">
+                    <i class="fas fa-hand-pointer"></i>
+                    <span>Mueve el ratón a los bordes para acceder a los menús</span>
+                </div>
+                <div class="help-hint-arrows">
+                    <span><i class="fas fa-arrow-left"></i> Participantes</span>
+                    <span>Modos de juego<i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Indicadores laterales -->
+        <div class="edge-indicator left-indicator">
+            <i class="fas fa-users"></i>
+            <div class="indicator-label"></div>
+        </div>
+        <div class="edge-indicator right-indicator">
+            <i class="fas fa-gamepad"></i>
+            <div class="indicator-label"></div>
+        </div>
 
-        <div class="main-layout">
+        <!-- Panel lateral izquierdo - Cantantes -->
+        <div class="floating-panel left-panel" id="leftPanel">
             <div class="sidebar">
                 <h2><i class="fas fa-users"></i> Cantantes</h2>
                 <div class="add-participant-section">
@@ -32,24 +67,32 @@
                 </div>
                 <div id="participantsList"></div>
             </div>
+        </div>
 
-            <div class="video-section">
-                <div class="video-wrapper">
-                    <div id="player"></div>
-                </div>
-                <div class="now-playing" id="nowPlaying">Selecciona una canción</div>
+        <!-- Zona de activación izquierda -->
+        <div class="hover-trigger left-trigger"></div>
+        
+        <!-- Video Section Fullscreen -->
+        <div class="fullscreen-video-section">
+            <div class="video-wrapper-immersive">
+                <div id="player"></div>
+            </div>
+            <div class="now-playing-immersive" id="nowPlaying">Selecciona una canción</div>
 
-                <div class="search-floating">
-                    <div class="search-input-group">
-                        <input type="text" id="searchInput" placeholder="Buscar canción..."
-                            onkeypress="if(event.key==='Enter') window.karaokeApp.searchAndPlay()">
-                    </div>
-                    <button class="dance-btn btn-sing" onclick="window.karaokeApp.searchAndPlay()">
-                        <span><i class="fas fa-microphone icon"></i>CANTAR</span>
+            <!-- Controles centrales flotantes -->
+            <div class="immersive-controls">
+                <div class="search-control">
+                    <input type="text" id="searchInput" placeholder="Buscar canción..."
+                        onkeypress="if(event.key==='Enter') window.karaokeApp.searchAndPlay()">
+                    <button class="btn-sing-immersive" onclick="window.karaokeApp.searchAndPlay()">
+                        <i class="fas fa-play"></i>
                     </button>
                 </div>
             </div>
+            </div>
 
+        <!-- Panel lateral derecho - Modos -->
+        <div class="floating-panel right-panel" id="rightPanel">
             <div class="sidebar modes-sidebar">
                 <h2><i class="fas fa-gamepad"></i> Modos de Juego</h2>
                 <div class="search-mode-toggle">
@@ -75,6 +118,8 @@
                 </button>
             </div>
         </div>
+<!-- Zona de activación derecha -->
+<div class="hover-trigger right-trigger"></div>
     </div>
 
     <div class="roulette-overlay" id="rouletteOverlay">
