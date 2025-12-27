@@ -568,11 +568,13 @@ input:checked+.slider-switch:before {
 .sidebar::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    margin: 25px 0;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #ff006e, #8338ec);
     border-radius: 10px;
+    margin: 25px 0;
 }
 
 .sidebar h2 {
