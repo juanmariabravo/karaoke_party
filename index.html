@@ -18,7 +18,7 @@
 
     <div class="container">
         <header>
-            <div class="logo">KARAOKE PARTY</div>
+            <div class="logo">KARAOKE</div>
         </header>
 
         <div class="main-layout">
@@ -52,6 +52,13 @@
 
             <div class="sidebar modes-sidebar">
                 <h2><i class="fas fa-gamepad"></i> Modos de Juego</h2>
+                <div class="search-mode-toggle">
+                    <span class="mode-label">Karaoke (sin voz)</span>
+                    <label class="switch">
+                        <input type="checkbox" id="karaokeMode">
+                        <span class="slider-switch"></span>
+                    </label>
+                </div>
                 <button class="mode-btn btn-roulette" onclick="window.karaokeApp.startRoulette()">
                     <span class="mode-icon"><i class="fas fa-dice"></i></span>
                     <div class="mode-info">

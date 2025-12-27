@@ -12,7 +12,9 @@ export async function searchAndPlay() {
     }
 
     document.getElementById('nowPlaying').textContent = 'Buscando...';
-    const query = `${searchTerm} Letra Karaoke`;
+    const karaokeMode = document.getElementById('karaokeMode').checked;
+    const searchMode = karaokeMode ? 'Karaoke' : 'Letra';
+    const query = `${searchTerm} ${searchMode}`;
     const videoIds = await searchYouTube(query);
 
     if (videoIds && videoIds.length > 0) {
@@ -77,7 +79,9 @@ export async function startRoulette() {
         setTimeout(async () => {
             overlay.classList.remove('active');
 
-            const query = `${selectedSong.titulo} ${selectedSong.artista} Letra Karaoke`;
+            const karaokeMode = document.getElementById('karaokeMode').checked;
+            const searchMode = karaokeMode ? 'Karaoke' : 'Letra';
+            const query = `${selectedSong.titulo} ${selectedSong.artista} ${searchMode}`;
             const videoIds = await searchYouTube(query);
 
             if (videoIds && videoIds.length > 0) {
@@ -107,7 +111,9 @@ export async function startEvolution() {
 
 // Reproducir canción del modo evolución
 export async function playEvolutionSong(song) {
-    const query = `${song.titulo} ${song.artista} Letra Karaoke`;
+    const karaokeMode = document.getElementById('karaokeMode').checked;
+    const searchMode = karaokeMode ? 'Karaoke' : 'Letra';
+    const query = `${song.titulo} ${song.artista} ${searchMode}`;
     const videoIds = await searchYouTube(query);
 
     if (videoIds && videoIds.length > 0) {
