@@ -243,6 +243,12 @@ body {
     z-index: 10;
     letter-spacing: 2px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+    
+    .now-playing-immersive.hide {
+        opacity: 0;
 }
 
 /* Paneles flotantes */
@@ -302,6 +308,13 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+    opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+    
+    .immersive-controls.hide {
+        opacity: 0;
+        pointer-events: none;
 }
 
 .search-control {
@@ -996,6 +1009,7 @@ input:checked+.slider-switch:before {
     justify-content: center;
     gap: 2px;
     transition: all 0.3s ease;
+    opacity: 0;
 }
 
 .evolution-next-btn.visible {
@@ -1003,6 +1017,9 @@ input:checked+.slider-switch:before {
     animation: floatIn 0.5s ease;
 }
 
+.evolution-next-btn.visible.controls-visible {
+    opacity: 1;
+}
 @keyframes floatIn {
     from {
         transform: translateY(100px);
@@ -1206,10 +1223,13 @@ input:checked+.slider-switch:before {
     align-items: center;
     gap: 10px;
     opacity: 0.6;
-    transition: all 0.3s ease;
+    transition: opacity 0.4s ease;
     pointer-events: none;
 }
 
+.edge-indicator.hide {
+    opacity: 0;
+}
 .left-indicator {
     left: 10px;
     border-left: 3px solid #06ffa5;

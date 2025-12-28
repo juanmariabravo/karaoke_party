@@ -53,6 +53,93 @@ function setupImmersiveMode() {
             rightPanel.classList.remove('visible');
         });
     }
+
+    // Auto-ocultar elementos flotantes con inactividad (retrasar para que los elementos existan)
+    setTimeout(() => {
+        setupAutoHideControls();
+    }, 100);
+}
+
+// Auto-ocultar controles flotantes cuando el ratón está inactivo
+function setupAutoHideControls() {
+    let hideTimeout;
+    const hideDelay = 3000; // 3 segundos
+
+    function getElements() {
+        return [
+            document.querySelector('.now-playing-immersive'),
+            document.querySelector('.immersive-controls'),
+            ...document.querySelectorAll('.edge-indicator'),
+            document.getElementById('evolutionNextBtn')
+        ].filter(el => el !== null);
+    }
+
+    function isVideoPlaying() {
+        // Verificar si el reproductor existe y está reproduciendo (estado 1 = playing)
+        try {
+            return state.player && state.player.getPlayerState && state.player.getPlayerState() === 1;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function showControls() {
+        //console.log('mousemove detectado - isVideoPlaying:', isVideoPlaying());
+        const elements = getElements();
+        const overlay = document.getElementById('videoOverlay');
+
+        elements.forEach(el => {
+            el.classList.remove('hide');
+        });
+
+        // Deshabilitar overlay cuando los controles están visibles
+        if (overlay) {
+            overlay.style.pointerEvents = 'none';
+        }
+
+        // Cancelar timeout anterior
+        clearTimeout(hideTimeout);
+
+        // Solo programar ocultación si el video está reproduciendo
+        if (isVideoPlaying()) {
+            hideTimeout = setTimeout(() => {
+                hideControls();
+            }, hideDelay);
+        }
+    }
+
+    function hideControls() {
+        const overlay = document.getElementById('videoOverlay');
+
+        // Solo ocultar si el video está reproduciendo
+        if (isVideoPlaying()) {
+            const elements = getElements();
+            elements.forEach(el => {
+                el.classList.add('hide');
+            });
+
+            // Habilitar overlay cuando los controles están ocultos
+            if (overlay) {
+                overlay.style.pointerEvents = 'auto';
+            }
+        }
+    }
+
+    // Mostrar controles al mover el ratón
+    document.addEventListener('mousemove', showControls);
+
+    // También escuchar en el overlay del video
+    const videoOverlay = document.getElementById('videoOverlay');
+    if (videoOverlay) {
+        videoOverlay.addEventListener('mousemove', showControls);
+    }
+
+    // Ocultar controles después de 4 segundos iniciales solo si está reproduciendo
+    setTimeout(() => {
+        if (isVideoPlaying()) {
+            hideControls();
+        }
+    }, 4000);
 }
 
 // Exponer funciones globales para uso desde HTML
