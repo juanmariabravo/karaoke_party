@@ -2,6 +2,22 @@
 
 Aplicación de karaoke con gestión dinámica de participantes y canciones desde archivos de configuración JSON. Obtiene canciones de YouTube usando la API de YouTube Data v3.
 
+![Inicio](capturas_app/title_page.png)
+
+## Experiencia inmersiva
+
+Karaoke Party ofrece una experiencia tipo "karaoke real":
+
+- **Controles flotantes** que se ocultan automáticamente para ver el vídeo en pantalla completa.
+- **Overlay inteligente**: detecta movimiento y clics sobre el vídeo, permitiendo pausar fácilmente y ocultar/mostrar los controles.
+- **Modos de juego**: Cantar, Ruleta y Evolución, con transiciones visuales y overlays animados.
+- **Gestión visual de participantes** y canciones desde la propia interfaz.
+- **Sidebar y paneles** con diseño moderno y scroll personalizado.
+
+![Ayuda navegación](capturas_app/navigation_help.png)
+![Modos de juego](capturas_app/gamemodes_sidebar.png)
+
+
 ## Requisitos
 
 - Python 3.x instalado
@@ -89,7 +105,7 @@ Almacena la API Key de YouTube:
 ```
 
 ### `participantes.json`
-Lista de participantes que pueden cantar:
+Lista de participantes que pueden cantar. Este archivo se actualiza automáticamente al añadir o eliminar participantes desde la web:
 ```json
 [
   "Ana",
@@ -114,20 +130,24 @@ Lista de canciones disponibles para todos los modos (Ruleta y Evolución):
 ### Gestión de Participantes
 - **Añadir**: Escribe un nombre en el campo y presiona Enter o haz clic en "Añadir"
 - **Eliminar**: Haz clic en el botón "Eliminar" junto al nombre del participante
+![Participantes](capturas_app/singers_sidebar.png)
+
 
 ### Modos de Juego
 
 1. **CANTAR**: Busca manualmente cualquier canción y reprodúcela
-2. **RULETA**: Selección aleatoria de participante + canción
+![Reproducción](capturas_app/song_play.png)
+2. **RULETA**: Selección aleatoria de cantantes + canción
+![Ruleta](capturas_app/roulette.png)
 3. **EVOLUCIÓN**: Reproduce todas las canciones ordenadas por año
+![Evolución](capturas_app/evolution_title.png)
 
 ## Editar Configuración
 
 Puedes editar los archivos JSON directamente o:
 
 - **Participantes**: Usar la interfaz web (cambios se guardan automáticamente)
-- **Canciones**: Editar manualmente los archivos JSON con tu editor favorito
-el archivo `canciones.json`
+- **Canciones**: Editar manualmente los archivos JSON con tu editor favorito el archivo `canciones.json`
 ### Formato de Canciones
 
 ```json
@@ -147,6 +167,7 @@ el archivo `canciones.json`
 ### "Error al buscar. Verifica tu API Key"
 - Comprueba que tu API Key de YouTube sea válida en [config.json](config.json)
 - Verifica que la API de YouTube Data v3 esté habilitada en tu proyecto de Google Cloud
+- Revisa si has sobrepasado los límites de cuota de tu API Key en Google Cloud Console
 
 ### Los cambios no se guardan
 - El servidor debe estar ejecutándose para guardar cambios
