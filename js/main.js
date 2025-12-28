@@ -145,6 +145,12 @@ function setupAutoHideControls() {
 
     // Evaluación periódica: verificar si debemos ocultar controles
     setInterval(() => {
+        // No ocultar controles si el input de búsqueda está enfocado
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput && document.activeElement === searchInput) {
+            showControls();
+            return;
+        }
         if (isVideoPlaying()) {
             const elements = getElements();
             const isVisible = elements.some(el => !el.classList.contains('hide'));
