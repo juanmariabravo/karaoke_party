@@ -1028,14 +1028,14 @@ input:checked+.slider-switch:before {
     opacity: 0;
 }
 
+
 .evolution-next-btn.visible {
     display: flex;
     animation: floatIn 0.5s ease;
-}
-
-.evolution-next-btn.visible.controls-visible {
     opacity: 1;
 }
+
+
 @keyframes floatIn {
     from {
         transform: translateY(100px);
