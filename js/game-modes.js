@@ -29,6 +29,8 @@ export async function searchAndPlay() {
         state.currentVideoIndex = 0;
         loadVideoWithTimeout(videoIds[0], window.karaokeApp.tryNextVideo);
         document.getElementById('nowPlaying').textContent = searchTerm.toUpperCase();
+        // Limpiar input de búsqueda
+        document.getElementById('searchInput').value = '';
     } else {
         document.getElementById('nowPlaying').textContent = 'No encontrado';
     }
@@ -47,6 +49,9 @@ export async function startRoulette() {
         document.getElementById('evolutionNextBtn').classList.remove('visible');
         window.karaokeApp.updateSongsList();
     }
+
+    // Limpiar input de búsqueda
+    document.getElementById('searchInput').value = '';
 
     const overlay = document.getElementById('rouletteOverlay');
     const singerSlot1 = document.getElementById('singerSlot1');
@@ -115,6 +120,9 @@ export async function startEvolution() {
         alert('No hay canciones disponibles');
         return;
     }
+
+    // Limpiar input de búsqueda
+    document.getElementById('searchInput').value = '';
 
     state.evolutionMode = true;
     state.currentEvolutionIndex = 0;
