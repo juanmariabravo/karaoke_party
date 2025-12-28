@@ -840,7 +840,8 @@ input:checked+.slider-switch:before {
     border-radius: 30px;
     padding: 25px;
     border: 2px solid rgba(255, 255, 255, 0.1);
-    max-height: 600px;
+    height: 100%;
+        max-height: none;
     overflow-y: auto;
 }
 
