@@ -20,7 +20,7 @@ export async function searchAndPlay() {
 
     document.getElementById('nowPlaying').textContent = 'Buscando...';
     const karaokeMode = document.getElementById('karaokeMode').checked;
-    const searchMode = karaokeMode ? 'Karaoke' : 'Letra';
+    const searchMode = karaokeMode ? 'Karaoke' : 'Letra, Lyrics';
     const query = `${searchTerm} ${searchMode}`;
     const videoIds = await searchYouTube(query);
 
